@@ -1,0 +1,80 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.5.1"
+    id("com.google.protobuf") version "0.8.15"
+}
+
+version = "0.1"
+group = "io.hashimati"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor("io.micronaut:micronaut-http-validation")
+		annotationProcessor("io.micronaut.data:micronaut-data-processor")
+		annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+		implementation("com.graphql-java-kickstart:graphql-java-tools:13.0.0")
+		implementation("io.micronaut.data:micronaut-data-jdbc")
+		implementation("io.micronaut.graphql:micronaut-graphql")
+		implementation("io.micronaut.liquibase:micronaut-liquibase")
+		implementation("io.micronaut.micrometer:micronaut-micrometer-core")
+		implementation("io.micronaut.reactor:micronaut-reactor")
+		implementation("io.micronaut.reactor:micronaut-reactor-http-client")
+		implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+		implementation("io.micronaut.tracing:micronaut-tracing-jaeger")
+		implementation("io.micronaut:micronaut-management")
+		implementation("io.swagger.core.v3:swagger-annotations")
+		runtimeOnly("com.h2database:h2")
+    implementation("io.micronaut.grpc:micronaut-grpc-runtime")
+		testRuntimeOnly("com.h2database:h2")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
+
+}
+
+
+application {
+    mainClass.set("io.hashimati.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("io.hashimati.*")
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs("build/generated/source/proto/main/grpc")
+            srcDirs("build/generated/source/proto/main/java")
+        }
+    }
+}
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.20.1" }
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.46.0" }
+    }
+    generateProtoTasks {
+        all()*.plugins { grpc {} }
+    }
+}
+tasks.withType(JavaCompile) {
+    options.fork = true
+    options.forkOptions.jvmArgs << '-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop'
+}

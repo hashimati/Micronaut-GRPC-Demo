@@ -1,0 +1,15 @@
+type Fruit{
+    id:Int,
+    	id : String,
+	name : String,
+	quantity : Int,
+	price : Float
+}
+input FruitInput{
+    id:Int,
+    	id : String,
+	name : String,
+	quantity : Int,
+	price : Float
+}
+

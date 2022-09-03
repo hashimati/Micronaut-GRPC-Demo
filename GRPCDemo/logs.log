@@ -1,0 +1,99 @@
+13:43:57.096 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:43:57.359 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:43:57.507 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+13:43:58.792 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+13:43:58.804 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`quantity` INT NOT NULL,`price` DOUBLE NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+13:43:59.946 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 9259ms. Server Running: http://localhost:8080
+14:04:52.476 [Test worker] INFO  i.m.context.env.DefaultEnvironment - Established active environments: [test]
+14:04:53.259 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:04:53.537 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:04:53.738 [Test worker] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+14:04:55.161 [Test worker] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+14:04:55.175 [Test worker] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`quantity` INT NOT NULL,`price` DOUBLE NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+14:04:56.515 [Test worker] INFO  i.m.g.s.GrpcEmbeddedServerListener - GRPC started on port 42521
+14:04:56.643 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:04:56.651 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:04:57.134 [Test worker] INFO  i.m.context.env.DefaultEnvironment - Established active environments: [test]
+14:04:57.202 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+14:04:57.205 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+14:04:57.216 [Test worker] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+14:04:57.338 [Test worker] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+14:04:57.340 [Test worker] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`quantity` INT NOT NULL,`price` DOUBLE NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+14:04:57.500 [Test worker] INFO  i.m.g.s.GrpcEmbeddedServerListener - GRPC started on port 42107
+14:04:58.351 [default-nioEventLoopGroup-5-3] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@2705893e
+14:04:58.358 [default-nioEventLoopGroup-5-3] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@2705893e
+14:04:58.414 [default-nioEventLoopGroup-5-3] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`quantity`,`price`,`dateCreated`,`dateUpdated`) VALUES (?,?,?,?,?)
+14:04:58.417 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Binding parameter at position 1 to value Test42 with data type: STRING
+14:04:58.419 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Binding parameter at position 2 to value 55 with data type: INTEGER
+14:04:58.419 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Binding parameter at position 3 to value 0.4755678999666175 with data type: DOUBLE
+14:04:58.420 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Binding parameter at position 4 to value Fri Sep 02 14:04:58 AST 2022 with data type: DATE
+14:04:58.431 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Binding parameter at position 5 to value Fri Sep 02 14:04:58 AST 2022 with data type: DATE
+14:04:58.594 [default-nioEventLoopGroup-5-5] INFO  i.h.controllers.FruitController - find All
+14:04:58.596 [default-nioEventLoopGroup-5-5] INFO  io.hashimati.services.FruitService - Find All
+14:04:58.605 [default-nioEventLoopGroup-5-5] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`quantity`,fruit_.`price`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_
+14:04:58.834 [default-nioEventLoopGroup-5-7] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@3da6c32e
+14:04:58.835 [default-nioEventLoopGroup-5-7] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@3da6c32e
+14:04:58.836 [default-nioEventLoopGroup-5-7] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`quantity`,`price`,`dateCreated`,`dateUpdated`) VALUES (?,?,?,?,?)
+14:04:58.836 [default-nioEventLoopGroup-5-7] TRACE io.micronaut.data.query - Binding parameter at position 1 to value Test9 with data type: STRING
+14:04:58.837 [default-nioEventLoopGroup-5-7] TRACE io.micronaut.data.query - Binding parameter at position 2 to value 92 with data type: INTEGER
+14:04:58.837 [default-nioEventLoopGroup-5-7] TRACE io.micronaut.data.query - Binding parameter at position 3 to value 0.07949555307073308 with data type: DOUBLE
+14:04:58.837 [default-nioEventLoopGroup-5-7] TRACE io.micronaut.data.query - Binding parameter at position 4 to value Fri Sep 02 14:04:58 AST 2022 with data type: DATE
+14:04:58.837 [default-nioEventLoopGroup-5-7] TRACE io.micronaut.data.query - Binding parameter at position 5 to value Fri Sep 02 14:04:58 AST 2022 with data type: DATE
+14:04:58.853 [default-nioEventLoopGroup-5-9] INFO  i.h.controllers.FruitController - update io.hashimati.domains.Fruit@3da7abec
+14:04:58.854 [default-nioEventLoopGroup-5-9] INFO  io.hashimati.services.FruitService - update io.hashimati.domains.Fruit@3da7abec
+14:04:58.859 [default-nioEventLoopGroup-5-9] DEBUG io.micronaut.data.query - Executing SQL query: UPDATE `fruits` SET `name`=?,`quantity`=?,`price`=?,`dateUpdated`=? WHERE (`id` = ?)
+14:04:58.860 [default-nioEventLoopGroup-5-9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value Test9 with data type: STRING
+14:04:58.861 [default-nioEventLoopGroup-5-9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value 92 with data type: INTEGER
+14:04:58.861 [default-nioEventLoopGroup-5-9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value 0.07949555307073308 with data type: DOUBLE
+14:04:58.861 [default-nioEventLoopGroup-5-9] TRACE io.micronaut.data.query - Binding parameter at position 4 to value Fri Sep 02 14:04:58 AST 2022 with data type: DATE
+14:04:58.861 [default-nioEventLoopGroup-5-9] TRACE io.micronaut.data.query - Binding parameter at position 5 to value 2 with data type: LONG
+14:04:59.088 [default-nioEventLoopGroup-5-11] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@b92967e4
+14:04:59.089 [default-nioEventLoopGroup-5-11] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@b92967e4
+14:04:59.091 [default-nioEventLoopGroup-5-11] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`quantity`,`price`,`dateCreated`,`dateUpdated`) VALUES (?,?,?,?,?)
+14:04:59.091 [default-nioEventLoopGroup-5-11] TRACE io.micronaut.data.query - Binding parameter at position 1 to value Test13 with data type: STRING
+14:04:59.092 [default-nioEventLoopGroup-5-11] TRACE io.micronaut.data.query - Binding parameter at position 2 to value 10 with data type: INTEGER
+14:04:59.092 [default-nioEventLoopGroup-5-11] TRACE io.micronaut.data.query - Binding parameter at position 3 to value 0.0642338856380621 with data type: DOUBLE
+14:04:59.092 [default-nioEventLoopGroup-5-11] TRACE io.micronaut.data.query - Binding parameter at position 4 to value Fri Sep 02 14:04:59 AST 2022 with data type: DATE
+14:04:59.093 [default-nioEventLoopGroup-5-11] TRACE io.micronaut.data.query - Binding parameter at position 5 to value Fri Sep 02 14:04:59 AST 2022 with data type: DATE
+14:04:59.115 [default-nioEventLoopGroup-5-13] INFO  io.hashimati.services.FruitService - Finding Fruit By Id: 3
+14:04:59.118 [default-nioEventLoopGroup-5-13] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`quantity`,fruit_.`price`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_ WHERE (fruit_.`id` = ?)
+14:04:59.119 [default-nioEventLoopGroup-5-13] TRACE io.micronaut.data.query - Binding parameter at position 1 to value 3 with data type: LONG
+14:04:59.342 [default-nioEventLoopGroup-5-15] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@16d3cdbb
+14:04:59.343 [default-nioEventLoopGroup-5-15] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@16d3cdbb
+14:04:59.344 [default-nioEventLoopGroup-5-15] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`quantity`,`price`,`dateCreated`,`dateUpdated`) VALUES (?,?,?,?,?)
+14:04:59.344 [default-nioEventLoopGroup-5-15] TRACE io.micronaut.data.query - Binding parameter at position 1 to value Test77 with data type: STRING
+14:04:59.344 [default-nioEventLoopGroup-5-15] TRACE io.micronaut.data.query - Binding parameter at position 2 to value 78 with data type: INTEGER
+14:04:59.344 [default-nioEventLoopGroup-5-15] TRACE io.micronaut.data.query - Binding parameter at position 3 to value 0.09212150631752336 with data type: DOUBLE
+14:04:59.344 [default-nioEventLoopGroup-5-15] TRACE io.micronaut.data.query - Binding parameter at position 4 to value Fri Sep 02 14:04:59 AST 2022 with data type: DATE
+14:04:59.345 [default-nioEventLoopGroup-5-15] TRACE io.micronaut.data.query - Binding parameter at position 5 to value Fri Sep 02 14:04:59 AST 2022 with data type: DATE
+14:04:59.564 [default-nioEventLoopGroup-5-17] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@6adf4182
+14:04:59.564 [default-nioEventLoopGroup-5-17] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@6adf4182
+14:04:59.565 [default-nioEventLoopGroup-5-17] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`quantity`,`price`,`dateCreated`,`dateUpdated`) VALUES (?,?,?,?,?)
+14:04:59.566 [default-nioEventLoopGroup-5-17] TRACE io.micronaut.data.query - Binding parameter at position 1 to value Test47 with data type: STRING
+14:04:59.566 [default-nioEventLoopGroup-5-17] TRACE io.micronaut.data.query - Binding parameter at position 2 to value 96 with data type: INTEGER
+14:04:59.566 [default-nioEventLoopGroup-5-17] TRACE io.micronaut.data.query - Binding parameter at position 3 to value 0.9343059445780347 with data type: DOUBLE
+14:04:59.567 [default-nioEventLoopGroup-5-17] TRACE io.micronaut.data.query - Binding parameter at position 4 to value Fri Sep 02 14:04:59 AST 2022 with data type: DATE
+14:04:59.567 [default-nioEventLoopGroup-5-17] TRACE io.micronaut.data.query - Binding parameter at position 5 to value Fri Sep 02 14:04:59 AST 2022 with data type: DATE
+14:04:59.581 [default-nioEventLoopGroup-5-3] INFO  i.h.controllers.FruitController - Deleting Fruit by Id: 5
+14:04:59.582 [default-nioEventLoopGroup-5-3] INFO  io.hashimati.services.FruitService - Deleting Fruit by Id: 5
+14:04:59.586 [default-nioEventLoopGroup-5-3] DEBUG io.micronaut.data.query - Executing Query: DELETE  FROM `fruits`  WHERE (`id` = ?)
+14:04:59.587 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Binding parameter at position 1 to value 5 with data type: LONG
+14:04:59.588 [default-nioEventLoopGroup-5-3] TRACE io.micronaut.data.query - Update operation updated 1 records
+14:04:59.588 [default-nioEventLoopGroup-5-3] INFO  io.hashimati.services.FruitService - Deleted Fruit by Id: 5
+14:04:59.620 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+14:04:59.624 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+14:05:02.477 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:05:02.708 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:05:02.803 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+14:05:03.825 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+14:05:03.837 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`quantity` INT NOT NULL,`price` DOUBLE NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+14:05:04.973 [main] INFO  i.m.g.s.GrpcEmbeddedServerListener - GRPC started on port 50051
+14:05:04.975 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 3526ms. Server Running: http://localhost:8080

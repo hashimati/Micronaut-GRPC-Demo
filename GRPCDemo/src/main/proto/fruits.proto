@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.hashimati";
+option java_outer_classname = "FruitService";
+option objc_class_prefix = "HLW";
+import "common.proto";
+
+package io.hashimati;
+
+
+service FruitGrpcService {
+  rpc save (FruitGrpc) returns (MessageReply) {}
+  rpc update (FruitGrpc) returns (MessageReply){}
+  rpc delete (IdQuery) returns (MessageReply){}
+  rpc findById (IdQuery) returns (FruitGrpc) {}
+  rpc findAll (PageQuery) returns (stream FruitGrpc){}
+}
+message FruitGrpc {
+  int64 id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  double price = 4;
+}
